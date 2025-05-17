@@ -1,16 +1,20 @@
-<div class="login-container">
-    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-      <h2>Login</h2>
-      
-      <div class="form-group">
-        <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
-      </div>
-      
-      <div class="form-group">
-        <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
-      </div>
-      
-      <button type="submit">Login</button>
-    </form>
-  </div>
+<div class="emoji-rain"></div>
+
+<form (ngSubmit)="onLogin()">
+  <h2>Login</h2>
+
+  <label>Email</label>
+  <input [(ngModel)]="email" name="email" type="email" required />
+
+  <label>Password</label>
+  <input [(ngModel)]="password" name="password" type="password" required />
+
+  <button type="submit">Login</button>
+
   
+  <!-- Signup prompt -->
+  <p style="margin-top: 1rem; text-align: center; font-size: 0.9rem;">
+    Don't have an account?
+    <a routerLink="/register" style="color: #ff4c4c; text-decoration: underline;">Sign up</a>
+  </p>
+</form>

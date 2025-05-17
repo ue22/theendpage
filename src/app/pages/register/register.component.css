@@ -7,17 +7,7 @@
     background: linear-gradient(135deg, #000000, #8b0000); /* black to dark red */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  
-  /* Login form styling 
-  form {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    width: 300px;
-    color: #fff;
-  }*/
+
   
   h2 {
     text-align: center;

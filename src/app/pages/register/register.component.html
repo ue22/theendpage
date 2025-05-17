@@ -1,0 +1,26 @@
+<div class="emoji-rain"></div>
+
+<form (ngSubmit)="onRegister()">
+  <h2>Register</h2>
+
+  <label>Name</label>
+  <input [(ngModel)]="name" name="name" required />
+
+  <label>Email</label>
+  <input [(ngModel)]="email" name="email" required />
+
+  <label>Password</label>
+  <input [(ngModel)]="password" name="password" required type="password" />
+
+  <label>Confirm Password</label>
+  <input [(ngModel)]="password" name="confirmpassword" required type="password" />
+
+
+  <button type="submit">Create Account</button>
+
+  <p style="margin-top: 1rem; text-align: center; font-size: 0.9rem;">
+    Already have an account?
+    <a [routerLink]="'/'" style="color: #ff4c4c; text-decoration: underline;">Login</a>
+  </p>
+
+</form>
