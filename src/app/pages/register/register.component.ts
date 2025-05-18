@@ -2,6 +2,7 @@ import { Component, AfterViewInit, Renderer2, ElementRef, Inject, PLATFORM_ID } 
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'; // ✅ Add this
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +12,18 @@ import { RouterModule } from '@angular/router'; // ✅ Add this
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements AfterViewInit {
-  name = '';
-  email = '';
-  password = '';
+  form = {
+  name: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
+};
+
 
   constructor(
     private renderer: Renderer2,
     private elRef: ElementRef,
+    private authService: AuthService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -49,7 +55,24 @@ export class RegisterComponent implements AfterViewInit {
     }
   }
 
-  onRegister() {
-    console.log('Registering:', this.name, this.email, this.password);
+onRegister() {
+  if (this.form.password !== this.form.confirmPassword) {
+    alert("Passwords do not match!");
+    return;
   }
+
+  const { name, email, password } = this.form;
+  this.authService.register({ name, email, password }).subscribe({
+    next: res => {
+      console.log('Registered:', res);
+      alert('Register successful! 🎉');
+    },
+    error: err => {
+      console.error(err);
+      alert('Registration failed: ' + (err.error?.message || 'Unknown error'));
+    }
+  });
+}
+
+
 }

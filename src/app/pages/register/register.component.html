@@ -4,16 +4,16 @@
   <h2>Register</h2>
 
   <label>Name</label>
-  <input [(ngModel)]="name" name="name" required />
+  <input [(ngModel)]="form.name" name="name" required />
 
   <label>Email</label>
-  <input [(ngModel)]="email" name="email" required />
+  <input [(ngModel)]="form.email" name="email" required />
 
   <label>Password</label>
-  <input [(ngModel)]="password" name="password" required type="password" />
+  <input [(ngModel)]="form.password" name="password" required type="password" />
 
   <label>Confirm Password</label>
-  <input [(ngModel)]="password" name="confirmpassword" required type="password" />
+  <input [(ngModel)]="form.confirmPassword" name="confirmpassword" required type="password" />
 
 
   <button type="submit">Create Account</button>
