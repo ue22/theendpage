@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css */
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10%);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.falling-emoji {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
